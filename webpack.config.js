@@ -22,7 +22,9 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin({
+      exclude: /node_modules/,
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),
     }),
