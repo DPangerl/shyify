@@ -50,6 +50,7 @@ export default function Start() {
     setMinWordLength(e.target.value);
   }
   function handleClickCopyToClipboard() {
+    setAlert({ message: "Successfully copied to clipboard" });
     navigator.clipboard.writeText(hyphenatedText);
   }
 
@@ -126,7 +127,12 @@ export default function Start() {
           </FlexBox>
         </CardBox>
       </FlexBox>
-      <Snackbar open={Boolean(alert)} autoHideDuration={6000} onClose={handleCloseAlert}>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={Boolean(alert)}
+        autoHideDuration={1500}
+        onClose={handleCloseAlert}
+      >
         <Alert onClose={handleCloseAlert} severity={alert?.severity || "info"} sx={{ width: "100%" }}>
           {alert?.message}
         </Alert>
