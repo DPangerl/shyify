@@ -1,0 +1,28 @@
+root: true
+env:
+  browser: true
+  node: true
+  es6: true
+parserOptions:
+  project: "./tsconfig.json"
+ignorePatterns:
+  - "node_modules/*"
+settings:
+  react:
+    version: "17"
+extends:
+  - "eslint:recommended"
+  - "plugin:@typescript-eslint/eslint-recommended"
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:react/recommended"
+  - "prettier"
+plugins:
+  - "@typescript-eslint"
+rules:
+  quotes: [2, "double"]
+  "@typescript-eslint/explicit-module-boundary-types": ["off"]
+  no-console:
+    - warn
+    - allow:
+        - error
+        - warning
